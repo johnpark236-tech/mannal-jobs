@@ -1,1 +1,297 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>만날평생일터 — 천안·아산 구인·구직 정보</title>
+<meta name="description" content="천안·아산 제조·설비, 생산·포장, 물류 일용·단기 일자리 구인·구직 정보를 만나는 곳">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f6f5c'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='sans-serif'%3E일%3C/text%3E%3C/svg%3E">
+<script src="config.js"></script>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d2321;--muted:#5d6762;--line:#e2ddd2;--brand:#1f6f5c;--brand-ink:#fff;--soft:#e7f1ec;--warn:#9a4b12;--warn-bg:#fdf1e6;--seek:#3b5bab;--seek-bg:#eaf0fb}
+@media (prefers-color-scheme:dark){:root{--bg:#141816;--card:#1d2321;--ink:#eef2ef;--muted:#a8b3ad;--line:#333b37;--brand:#4fb394;--brand-ink:#08231b;--soft:#20332c;--warn:#f0a868;--warn-bg:#3a2a1c;--seek:#8fa8ea;--seek-bg:#222b40}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+a{color:var(--brand)}button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header{background:var(--brand);color:var(--brand-ink)}
+header .wrap{padding:18px 16px 14px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{margin:0;font-size:24px;letter-spacing:-.5px}header p{margin:2px 0 0;opacity:.9;font-size:14px}
+#login{min-height:40px;display:flex;align-items:center;gap:8px;font-size:14px}
+#login button{background:transparent;color:var(--brand-ink);border:1px solid currentColor;border-radius:8px;padding:5px 10px;cursor:pointer}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto}
+nav button{flex:none;border:0;background:none;padding:12px 12px;border-bottom:3px solid transparent;cursor:pointer;color:var(--muted);font-weight:600}
+nav button[aria-current=true]{color:var(--ink);border-color:var(--brand)}
+main{padding:16px 0 32px}section[hidden]{display:none}
+.filters{display:grid;gap:8px;margin-bottom:14px}
+.row{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}.row b{flex:none;font-size:13px;color:var(--muted);align-self:center;width:34px}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;cursor:pointer;font-size:14px}
+.chip[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.notice{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:14px}
+.notice.warn{background:var(--warn-bg);color:var(--warn)}
+.count{color:var(--muted);font-size:14px;margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.card h3{margin:2px 0 4px;font-size:17px}.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;background:var(--soft);color:var(--brand)}
+.tag.seek{background:var(--seek-bg);color:var(--seek)}.meta{color:var(--muted);font-size:14px;margin:0}
+.pay{font-weight:700;margin:6px 0 0}.pay small{font-weight:400;color:var(--muted)}
+.card details{margin-top:8px}.card summary{cursor:pointer;color:var(--brand);font-size:14px}
+.body{white-space:pre-wrap;margin:8px 0;font-size:15px}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.btn{border:1px solid var(--brand);background:var(--brand);color:var(--brand-ink);border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:600}
+.btn.ghost{background:transparent;color:var(--brand)}.btn.small{padding:5px 10px;font-size:13px}.btn.quiet{border-color:var(--line);background:transparent;color:var(--muted)}
+.btn:disabled{opacity:.5;cursor:default}
+form .f{margin-bottom:12px}form label.t{display:block;font-weight:600;font-size:14px;margin-bottom:4px}
+input[type=text],input[type=tel],input[type=number],input[type=date],select,textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 10px;background:var(--card)}
+textarea{min-height:90px;resize:vertical}.hint{color:var(--muted);font-size:13px;margin:3px 0 0}
+.pick{display:flex;gap:6px;flex-wrap:wrap}.pick label{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:8px;padding:5px 10px;background:var(--card);font-size:14px;cursor:pointer}
+.pick input{width:auto;margin:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.agree{display:flex;gap:8px;align-items:flex-start;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:8px}.agree input{margin-top:4px;flex:none}
+#msg{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;max-width:calc(100% - 32px);z-index:9}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:18px 0 28px}footer p{margin:4px 0}
+.empty{text-align:center;color:var(--muted);padding:28px 0}
+@media (max-width:420px){.two{grid-template-columns:1fr}h1{font-size:22px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div><h1>만날평생일터</h1><p>구인·구직 정보를 만나는 곳 · 천안·아산</p></div>
+  <div id="login"></div>
+</div></header>
+<nav><div class="wrap" role="tablist">
+  <button data-view="list" aria-current="true">일자리·인재 보기</button>
+  <button data-view="write">글쓰기</button>
+  <button data-view="mine">내 글</button>
+  <button data-view="admin" hidden>운영자</button>
+</div></nav>
+<main class="wrap">
+  <div id="demo" class="notice warn" hidden>지금은 예시 화면입니다. 서버 연결 후 실제 글이 표시됩니다.</div>
 
+  <section id="v-list">
+    <div class="filters" id="filters"></div>
+    <p class="count" id="count"></p>
+    <div id="items"></div>
+  </section>
+
+  <section id="v-write" hidden>
+    <div class="notice">만날평생일터는 구인·구직 <b>정보만</b> 제공합니다. 채용 알선·추천을 하지 않으며, 근로계약은 당사자가 직접 맺습니다. 모든 글은 운영자 확인 후 게재됩니다.</div>
+    <div class="row" style="margin-bottom:12px"><b>구분</b><button class="chip" data-wtype="구인" aria-pressed="true">구인 공고 (회사)</button><button class="chip" data-wtype="구직" aria-pressed="false">구직 글 (개인)</button></div>
+    <form id="form" novalidate></form>
+  </section>
+
+  <section id="v-mine" hidden><div id="mine"></div></section>
+  <section id="v-admin" hidden><div id="admin"></div></section>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+<div id="msg" hidden role="status"></div>
+
+<script>
+const CFG = window.MANNAL_CONFIG || {}, OP = CFG.operator || {};
+const OPT = { type: ['구인','구직'], region: ['천안','아산'], job: ['제조·설비 조립','생산·포장','물류','기타'], work: ['일용','단기','상용'], day: ['월','화','수','목','금','토','일'], career: ['입문','숙련','전문'], wage: ['시급','일급','월급'] };
+const MIN_WAGE = { 2026: 10320, 2027: 10700 };
+const DEMO = !CFG.appsScriptUrl || new URLSearchParams(location.search).has('demo');
+const $ = s => document.querySelector(s);
+const won = n => Number(n || 0).toLocaleString('ko-KR') + '원';
+const telFmt = t => String(t || '').replace(/^(02|0\d{2})(\d{3,4})(\d{4})$/, '$1-$2-$3');
+function el(tag, attrs = {}, ...kids) { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (v == null || v === false) continue; if (k === 'class') e.className = v; else if (k === 'text') e.textContent = v; else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v === true ? '' : v); } for (const k of kids.flat()) if (k != null && k !== false) e.append(k); return e; }
+function toast(t) { const m = $('#msg'); m.textContent = t; m.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => m.hidden = true, 4000); }
+
+/* ---- 로그인 (구글) ---- */
+const TK = 'mannal-jobs-id-token';
+function idToken() { let t = ''; try { t = sessionStorage.getItem(TK) || ''; } catch {} if (!t) return ''; try { const p = JSON.parse(atob(t.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'))); if (p.exp * 1000 < Date.now() + 60000) { sessionStorage.removeItem(TK); return ''; } return t; } catch { return ''; } }
+function myEmail() { try { return JSON.parse(atob(idToken().split('.')[1].replace(/-/g, '+').replace(/_/g, '/'))).email || ''; } catch { return ''; } }
+function renderLogin() {
+  const box = $('#login'); box.replaceChildren();
+  if (myEmail()) { box.append(el('span', { text: myEmail() }), el('button', { text: '로그아웃', onclick: () => { try { sessionStorage.removeItem(TK); google.accounts.id.disableAutoSelect(); } catch {} location.reload(); } })); return; }
+  if (!CFG.googleClientId) { box.append(el('span', { text: DEMO ? '로그인 준비 중' : '' })); return; }
+  const s = el('script', { src: 'https://accounts.google.com/gsi/client', async: true }); s.onload = () => {
+    google.accounts.id.initialize({ client_id: CFG.googleClientId, callback: r => { try { sessionStorage.setItem(TK, r.credential); } catch {} location.reload(); } });
+    const b = el('div'); box.append(b); google.accounts.id.renderButton(b, { type: 'standard', size: 'medium', text: 'signin_with', locale: 'ko' });
+  }; document.head.append(s);
+}
+function needLogin() { if (myEmail()) return true; toast('위쪽의 구글 로그인 후 이용할 수 있습니다.'); window.scrollTo({ top: 0, behavior: 'smooth' }); return false; }
+
+/* ---- 서버 호출 (Apps Script, iframe 브리지) ---- */
+function api(path, body) {
+  if (DEMO) return Promise.reject(Error('예시 화면에서는 저장되지 않습니다.'));
+  const nonce = crypto.randomUUID().replace(/-/g, '');
+  return new Promise((resolve, reject) => {
+    const frame = el('iframe', { hidden: true, name: 'mj_' + nonce, 'aria-hidden': 'true' }); document.body.append(frame);
+    const form = el('form', { hidden: true, method: 'POST', action: CFG.appsScriptUrl, target: frame.name });
+    form.append(el('input', { name: 'payload', value: JSON.stringify({ path, body: body || {}, idToken: idToken(), origin: location.origin, bridgeNonce: nonce }) })); document.body.append(form);
+    const done = () => { clearTimeout(timer); removeEventListener('message', on); form.remove(); frame.remove(); };
+    const on = ev => { let h; try { h = new URL(ev.origin).hostname; } catch { return; } if (!(h === 'script.google.com' || h.endsWith('.googleusercontent.com'))) return; if (ev.data?.bridgeNonce !== nonce) return; const r = ev.data.result; done(); if (r?.ok) resolve(r.data); else { const m = r?.error || '처리하지 못했습니다. 다시 시도하세요.'; if (/다시 로그인/.test(m)) try { sessionStorage.removeItem(TK); } catch {} reject(Error(m)); } };
+    const timer = setTimeout(() => { done(); reject(Error('응답이 늦습니다. 잠시 후 다시 시도하세요.')); }, 45000);
+    addEventListener('message', on); form.submit();
+  });
+}
+
+/* ---- 예시 데이터 ---- */
+const SAMPLE = [
+  { id: 's1', type: '구인', name: '예시 테크', job: '제조·설비 조립', region: '천안', place: '천안시 서북구 성거읍', work: '일용', days: '월,화,수,목,금', hours: '08:30-17:30', wageType: '일급', wage: 120000, hourly: 15000, career: '입문', content: '반도체 설비 조립 보조. 보호구 지급. 초보 가능.', deadline: '2026-12-31', phone: '0415550000', created: '2026-11-15' },
+  { id: 's2', type: '구직', name: '박○○', job: '물류', region: '아산', work: '단기', days: '토,일', career: '숙련', content: '지게차 경험 3년, 주말 근무 희망합니다.', created: '2026-11-14' },
+  { id: 's3', type: '구인', name: '예시 물류', job: '생산·포장', region: '아산', place: '아산시 탕정면', work: '단기', days: '월,화,수,목,금', hours: '09:00-18:00', wageType: '시급', wage: 11000, hourly: 11000, career: '입문', content: '포장·검수, 4주 단기.', deadline: '2026-12-20', phone: '0415551111', created: '2026-11-13' }
+];
+
+/* ---- 목록 ---- */
+const params = new URLSearchParams(location.search);
+const F = { type: params.get('type') || '전체', region: params.get('area') || '전체', job: params.get('job') || '전체' };
+function chips() {
+  const box = $('#filters'); box.replaceChildren();
+  const row = (label, key, list) => el('div', { class: 'row' }, el('b', { text: label }), ['전체', ...list].map(v => el('button', { class: 'chip', 'aria-pressed': String(F[key] === v), text: v, onclick: () => { F[key] = v; syncUrl(); chips(); load(); } })));
+  box.append(row('구분', 'type', OPT.type), row('지역', 'region', OPT.region), row('직종', 'job', OPT.job));
+}
+function syncUrl() { const p = new URLSearchParams(location.search); const set = (k, v) => v === '전체' ? p.delete(k) : p.set(k, v); set('type', F.type); set('area', F.region); set('job', F.job); history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p : '')); }
+function minNote(it) { const y = Math.max(new Date().getFullYear(), Number(String(it.deadline || '').slice(0, 4)) || 0); const mw = MIN_WAGE[y] || MIN_WAGE[2027]; return it.hourly >= mw ? '최저시급 ' + won(mw) + ' 이상' : ''; }
+function card(it, opts = {}) {
+  const job = it.type === '구인';
+  const c = el('article', { class: 'card' },
+    el('div', {}, el('span', { class: 'tag' + (job ? '' : ' seek'), text: it.type }), el('span', { class: 'meta', text: [it.region, it.job, it.work].join(' · ') })),
+    el('h3', { text: job ? it.name : it.name + ' 님 · ' + it.career }),
+    el('p', { class: 'meta', text: job ? [it.place, it.days.replace(/,/g, ''), it.hours].filter(Boolean).join(' · ') : '가능 요일 ' + it.days.replace(/,/g, '') })
+  );
+  if (job) c.append(el('p', { class: 'pay' }, it.wageType + ' ' + won(it.wage) + ' ', el('small', { text: '(시급 환산 ' + won(it.hourly) + (minNote(it) ? ', ' + minNote(it) : '') + ') · 마감 ' + it.deadline })));
+  const d = el('details', {}, el('summary', { text: '자세히 보기' }));
+  if (it.content) d.append(el('p', { class: 'body', text: it.content }));
+  if (job) d.append(el('p', { class: 'meta', text: '연락처 ' + telFmt(it.phone) + ' · 사업자등록번호 ' + (it.bizNo || '확인됨') + ' · 경력 ' + it.career }));
+  const acts = el('div', { class: 'acts' });
+  if (job) acts.append(el('a', { class: 'btn small', href: 'tel:' + it.phone, text: '전화하기' }));
+  else acts.append(el('button', { class: 'btn small', text: '연락처 보기', onclick: e => showContact(it, e.target) }));
+  if (!opts.noReport) acts.append(el('button', { class: 'btn small quiet', text: '블라인드 요청', onclick: () => ask(it, '블라인드') }), el('button', { class: 'btn small quiet', text: '허위·불법 신고', onclick: () => ask(it, '신고') }));
+  d.append(acts); c.append(d); return c;
+}
+async function load() {
+  const box = $('#items'); box.replaceChildren(el('p', { class: 'empty', text: '불러오는 중…' }));
+  let items;
+  try { items = DEMO ? SAMPLE.filter(it => (F.type === '전체' || it.type === F.type) && (F.region === '전체' || it.region === F.region) && (F.job === '전체' || it.job === F.job)) : (await api('list', { type: F.type, region: F.region, job: F.job })).items; }
+  catch (e) { box.replaceChildren(el('p', { class: 'empty', text: e.message })); return; }
+  $('#count').textContent = '게재 중 ' + items.length + '건';
+  box.replaceChildren(...(items.length ? items.map(it => card(it)) : [el('p', { class: 'empty', text: '조건에 맞는 글이 아직 없습니다.' })]));
+}
+async function showContact(it, btn) {
+  if (DEMO) { toast('예시 화면입니다. 실제로는 로그인한 이용자에게만 연락처가 보이고 열람 기록이 남습니다.'); return; }
+  if (!needLogin()) return;
+  if (!confirmBox('이 구직자의 연락처를 봅니다. 열람 기록이 남으며, 채용 목적 외 사용은 금지됩니다.')) return;
+  btn.disabled = true; try { const r = await api('contact', { id: it.id }); btn.replaceWith(el('a', { class: 'btn small', href: 'tel:' + r.phone, text: telFmt(r.phone) })); } catch (e) { toast(e.message); btn.disabled = false; }
+}
+function confirmBox(t) { return window.confirm(t); }
+async function ask(it, kind) {
+  if (DEMO) { toast('예시 화면에서는 요청할 수 없습니다.'); return; }
+  if (!needLogin()) return;
+  const guide = kind === '블라인드' ? '블라인드 요청 사유를 적어 주세요. 요청하면 이 글은 바로 가려집니다. 만날평생일터는 분쟁의 옳고 그름을 판정하지 않으며, 임금 체불은 고용노동부(국번 없이 1350)에 진정할 수 있습니다.' : '허위·불법 공고 신고 사유를 적어 주세요. 운영자가 확인합니다.';
+  const reason = window.prompt(guide); if (!reason || !reason.trim()) return;
+  try { await api('request', { id: it.id, kind, reason: reason.trim() }); toast(kind === '블라인드' ? '블라인드 처리했습니다.' : '신고를 접수했습니다.'); load(); } catch (e) { toast(e.message); }
+}
+
+/* ---- 글쓰기 ---- */
+let wtype = '구인', editing = null;
+const field = (label, input, hint) => el('div', { class: 'f' }, el('label', { class: 't', text: label }), input, hint && el('p', { class: 'hint', text: hint }));
+const sel = (name, list, v) => el('select', { name }, list.map(x => el('option', { value: x, text: x, selected: v === x })));
+const picks = (name, list, multi, vals = []) => el('div', { class: 'pick' }, list.map(x => el('label', {}, el('input', { type: multi ? 'checkbox' : 'radio', name, value: x, checked: vals.includes(x) }), x)));
+function buildForm(v = {}) {
+  const f = $('#form'); f.replaceChildren(); const job = wtype === '구인';
+  document.querySelectorAll('[data-wtype]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.wtype === wtype)));
+  if (job) f.append(
+    field('업체명', el('input', { type: 'text', name: 'name', maxlength: 40, value: v.name || '' })),
+    field('사업자등록번호', el('input', { type: 'text', name: 'bizNo', inputmode: 'numeric', maxlength: 12, placeholder: '000-00-00000', value: v.bizNo || '' }), '번호 형식을 확인하고, 운영자가 휴·폐업 여부를 확인한 뒤 게재합니다.'),
+    el('div', { class: 'two' }, field('지역', sel('region', OPT.region, v.region)), field('직종', sel('job', OPT.job, v.job))),
+    field('근무지', el('input', { type: 'text', name: 'place', maxlength: 60, placeholder: '예) 천안시 서북구 성거읍', value: v.place || '' })),
+    el('div', { class: 'two' }, field('근무 형태', sel('work', OPT.work, v.work)), field('필요 경력', sel('career', OPT.career, v.career))),
+    field('근무 요일', picks('days', OPT.day, true, (v.days || '월,화,수,목,금').split(','))),
+    field('근무시간', el('input', { type: 'text', name: 'hours', placeholder: '08:30-17:30', value: v.hours || '' }), '휴게시간(8시간 이상 1시간)을 빼고 시급을 계산합니다.'),
+    el('div', { class: 'two' }, field('임금 유형', sel('wageType', OPT.wage, v.wageType || '일급')), field('임금(원)', el('input', { type: 'number', name: 'wage', min: 0, step: 100, placeholder: '120000', value: v.wage || '' }))),
+    el('p', { class: 'hint', id: 'wageCheck' }),
+    el('div', { class: 'two' }, field('연락처', el('input', { type: 'tel', name: 'phone', placeholder: '041-000-0000', value: telFmt(v.phone) || '' }), '공고에 공개됩니다(직업안정법).'), field('마감일', el('input', { type: 'date', name: 'deadline', value: v.deadline || '' }))),
+    field('업무 내용 (선택, 500자)', el('textarea', { name: 'content', maxlength: 500, placeholder: '하는 일, 보호구 지급 여부 등' }, v.content || '')),
+    el('label', { class: 'agree' }, el('input', { type: 'checkbox', name: 'agree' }), el('span', { text: '성별·나이 제한, 수익 보장, 돈·통장·주민번호 요구, 프리랜서(3.3%) 처리 문구를 쓰지 않았으며 실제 근로조건과 같음을 확인합니다. 거짓 공고는 법으로 금지됩니다.' }))
+  );
+  else f.append(
+    field('표시 이름', el('input', { type: 'text', name: 'name', maxlength: 20, placeholder: '예) 박○○', value: v.name || '' }), '실명 전체 대신 성과 ○ 표시를 권합니다.'),
+    el('div', { class: 'two' }, field('희망 지역', sel('region', OPT.region, v.region)), field('희망 직종', sel('job', OPT.job, v.job))),
+    el('div', { class: 'two' }, field('희망 근무 형태', sel('work', OPT.work, v.work)), field('경력 단계', sel('career', OPT.career, v.career))),
+    field('가능 요일', picks('days', OPT.day, true, (v.days || '').split(','))),
+    field('연락처', el('input', { type: 'tel', name: 'phone', placeholder: '010-0000-0000', value: telFmt(v.phone) || '' })),
+    field('한 줄 소개 (선택, 500자)', el('textarea', { name: 'content', maxlength: 500, placeholder: '경력, 가진 자격·장비, 희망 조건' }, v.content || '')),
+    el('p', { class: 'hint', text: '주민등록번호, 계좌번호, 사진, 주소 상세는 적지 마세요.' }),
+    el('label', { class: 'agree' }, el('input', { type: 'checkbox', name: 'contactConsent' }), el('span', { text: '[필수] 내 연락처를 로그인한 이용자(구인자 등)에게 공개하는 데 동의합니다. 누가 언제 열람했는지 기록되며, 게시 후 6개월이 지나면 글과 연락처가 파기됩니다.' }))
+  );
+  f.append(el('label', { class: 'agree' }, el('input', { type: 'checkbox', name: 'privacy' }), el('span', {}, '[필수] ', el('a', { href: 'privacy.html', target: '_blank', text: '개인정보 수집·이용' }), '과 ', el('a', { href: 'terms.html', target: '_blank', text: '이용약관' }), '에 동의합니다.')),
+    el('button', { class: 'btn', type: 'submit', text: editing ? '고쳐서 다시 검수 요청' : '검수 요청하기' }));
+  f.oninput = job ? wageCheck : null; wageCheck();
+}
+function wageCheck() {
+  const f = $('#form'), out = $('#wageCheck'); if (!out) return;
+  const m = String(f.hours?.value || '').match(/^(\d{1,2}):(\d{2})\s*[-~]\s*(\d{1,2}):(\d{2})$/), amount = Number(f.wage?.value || 0);
+  if (!m || !amount) { out.textContent = ''; return; }
+  let span = (m[3] * 60 + +m[4]) - (m[1] * 60 + +m[2]); if (span <= 0) span += 1440; const h = (span - (span >= 480 ? 60 : span >= 240 ? 30 : 0)) / 60;
+  const t = f.wageType.value, per = Math.floor(t === '시급' ? amount : t === '일급' ? amount / h : amount / 209);
+  const y = Math.max(new Date().getFullYear(), Number(String(f.deadline?.value || '').slice(0, 4)) || 0), mw = MIN_WAGE[y] || MIN_WAGE[2027];
+  out.textContent = '하루 ' + h + '시간 기준 시급 환산 ' + won(per) + (per >= mw ? ' ✓ ' + y + '년 최저시급(' + won(mw) + ') 이상' : ' ✗ ' + y + '년 최저시급(' + won(mw) + ') 미달 — 게재할 수 없습니다');
+  out.style.color = per >= mw ? '' : 'var(--warn)';
+}
+$('#form').addEventListener('submit', async e => {
+  e.preventDefault(); if (DEMO) { toast('예시 화면에서는 저장되지 않습니다.'); return; } if (!needLogin()) return;
+  const f = e.target, fd = new FormData(f); if (!f.privacy.checked) { toast('개인정보 수집·이용과 이용약관에 동의해 주세요.'); return; }
+  const b = { type: wtype, name: fd.get('name'), region: fd.get('region'), job: fd.get('job'), work: fd.get('work'), career: fd.get('career'), days: fd.getAll('days'), phone: fd.get('phone'), content: fd.get('content') };
+  if (wtype === '구인') Object.assign(b, { bizNo: fd.get('bizNo'), place: fd.get('place'), hours: fd.get('hours'), wageType: fd.get('wageType'), wage: Number(fd.get('wage')), deadline: fd.get('deadline'), agree: f.agree.checked });
+  else b.contactConsent = f.contactConsent.checked;
+  if (editing) b.id = editing;
+  const btn = f.querySelector('[type=submit]'); btn.disabled = true;
+  try { await api('post', b); toast('검수 요청했습니다. 운영자 확인 후 게재됩니다.'); editing = null; buildForm(); show('mine'); } catch (err) { toast(err.message); } finally { btn.disabled = false; }
+});
+document.querySelectorAll('[data-wtype]').forEach(b => b.addEventListener('click', () => { wtype = b.dataset.wtype; editing = null; buildForm(); }));
+
+/* ---- 내 글 ---- */
+async function loadMine() {
+  const box = $('#mine'); if (DEMO) { box.replaceChildren(el('p', { class: 'empty', text: '서버 연결 후 내가 쓴 글과 검수 결과가 여기에 나옵니다.' })); return; }
+  if (!myEmail()) { box.replaceChildren(el('p', { class: 'empty', text: '구글 로그인 후 내 글을 볼 수 있습니다.' })); return; }
+  box.replaceChildren(el('p', { class: 'empty', text: '불러오는 중…' }));
+  try {
+    const list = await api('mine'); if (!list.length) { box.replaceChildren(el('p', { class: 'empty', text: '아직 쓴 글이 없습니다.' })); return; }
+    box.replaceChildren(...list.map(it => { const c = card(it, { noReport: true });
+      c.prepend(el('p', { class: 'notice' + (['반려', '블라인드'].includes(it.status) ? ' warn' : ''), text: '상태: ' + it.status + (it.memo ? ' · ' + it.memo : '') }));
+      const a = el('div', { class: 'acts' });
+      if (!['블라인드', '삭제'].includes(it.status)) a.append(el('button', { class: 'btn small ghost', text: '고치기', onclick: () => { wtype = it.type; editing = it.id; buildForm(it); show('write'); } }));
+      if (it.status === '게재') a.append(el('button', { class: 'btn small ghost', text: '마감', onclick: () => act('mine/close', it.id) }));
+      if (it.status === '블라인드') a.append(el('button', { class: 'btn small ghost', text: '다시 게시 요청', onclick: () => { const r = prompt('다시 게시를 요청하는 이유를 적어 주세요.'); if (r && r.trim()) api('request', { id: it.id, kind: '재게시', reason: r.trim() }).then(() => toast('요청했습니다.'), e => toast(e.message)); } }));
+      a.append(el('button', { class: 'btn small quiet', text: '삭제', onclick: () => confirmBox('이 글을 삭제할까요? 연락처와 내용이 지워집니다.') && act('mine/delete', it.id) }));
+      c.append(a); return c; }));
+  } catch (e) { box.replaceChildren(el('p', { class: 'empty', text: e.message })); }
+}
+async function act(path, id) { try { await api(path, { id }); toast('처리했습니다.'); loadMine(); } catch (e) { toast(e.message); } }
+
+/* ---- 운영자 ---- */
+async function loadAdmin() {
+  const box = $('#admin'); box.replaceChildren(el('p', { class: 'empty', text: '불러오는 중…' }));
+  try {
+    const a = await api('admin'), sec = (t, n) => el('h2', { style: 'font-size:18px;margin:18px 0 8px', text: t + ' (' + n + ')' });
+    const review = it => { const c = card(it, { noReport: true }); c.prepend(el('p', { class: 'meta', text: '작성자 ' + it.email + (it.memo ? ' · 확인: ' + it.memo : '') }));
+      c.append(el('div', { class: 'acts' }, el('button', { class: 'btn small', text: '게재', onclick: () => decide(it.id, '게재') }), el('button', { class: 'btn small quiet', text: '반려', onclick: () => { const m = prompt('반려 사유(작성자에게 보임)'); if (m && m.trim()) decide(it.id, '반려', m.trim()); } })));
+      return c; };
+    box.replaceChildren(el('p', { class: 'notice', text: '게재 중 ' + a.counts.live + '건 · 전체 ' + a.counts.total + '건. 사업자등록번호는 국세청 홈택스(사업자 상태조회)에서 휴·폐업 여부를 확인한 뒤 게재하세요.' }),
+      sec('검수 대기', a.pending.length), ...a.pending.map(review),
+      sec('요청(블라인드·신고·재게시)', a.requests.length), ...a.requests.map(r => el('div', { class: 'card' }, el('p', { class: 'meta', text: r.at + ' · ' + r.kind + ' · ' + r.by }), el('p', { class: 'body', text: r.reason }), el('p', { class: 'meta', text: '글 ID ' + r.postId }), el('div', { class: 'acts' }, el('button', { class: 'btn small ghost', text: '처리 완료', onclick: () => api('admin/settle', { id: r.id }).then(loadAdmin, e => toast(e.message)) })))),
+      sec('블라인드된 글', a.blinded.length), ...a.blinded.map(it => { const c = card(it, { noReport: true }); c.append(el('div', { class: 'acts' }, el('button', { class: 'btn small ghost', text: '다시 게재', onclick: () => decide(it.id, '게재') }))); return c; }));
+  } catch (e) { box.replaceChildren(el('p', { class: 'empty', text: e.message })); }
+}
+function decide(id, decision, memo) { api('admin/review', { id, decision, memo: memo || '' }).then(() => { toast('처리했습니다.'); loadAdmin(); }, e => toast(e.message)); }
+
+/* ---- 화면 전환·하단 ---- */
+function show(v) {
+  document.querySelectorAll('nav [data-view]').forEach(b => b.setAttribute('aria-current', String(b.dataset.view === v)));
+  ['list', 'write', 'mine', 'admin'].forEach(x => $('#v-' + x).hidden = x !== v);
+  if (v === 'list') load(); if (v === 'mine') loadMine(); if (v === 'admin') loadAdmin();
+}
+document.querySelectorAll('nav [data-view]').forEach(b => b.addEventListener('click', () => show(b.dataset.view)));
+function footer() {
+  const f = $('#foot'), line = (...p) => el('p', { text: p.filter(Boolean).join(' · ') });
+  f.append(line(OP.name || '만날평생일터', OP.ceo && '대표 ' + OP.ceo, OP.address, OP.phone, OP.email),
+    line('직업정보제공사업 신고번호 ' + (OP.reportNo || '신고 준비 중'), OP.bizNo && '사업자등록번호 ' + OP.bizNo),
+    el('p', { text: '만날평생일터는 구인·구직 정보만 제공하며 채용을 알선하지 않습니다. 근로계약과 분쟁은 당사자가 직접 해결하며, 임금 체불은 고용노동부(1350)에 진정할 수 있습니다.' }),
+    el('p', {}, el('a', { href: 'privacy.html', text: '개인정보처리방침' }), ' · ', el('a', { href: 'terms.html', text: '이용약관' })));
+}
+$('#demo').hidden = !DEMO; renderLogin(); chips(); buildForm(); footer(); show('list');
+if (!DEMO && myEmail()) api('me').then(m => { if (m.owner) document.querySelector('[data-view=admin]').hidden = false; }).catch(() => {});
+</script>
+</body>
+</html>
